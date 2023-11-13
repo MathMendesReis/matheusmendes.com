@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <body className='flex flex-col items-center'>
+    <body className='flex flex-col items-center '>
       <header className="h-[4.5rem] flex items-center justify-between w-2/3">
         <Link href={'/'}>
           <ArrowLeft/>
