@@ -9,6 +9,11 @@
 
 * {
   /* border: 1px solid red; */
+
+  ::-webkit-scrollbar{
+    display: none;
+
+  }
 }
 
 @media (prefers-color-scheme: dark) {
