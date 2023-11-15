@@ -1,0 +1,18 @@
+{
+  "links": [
+    {
+      "href": "/projetos",
+      "text": "Projetos"
+    },
+    {
+      "href": "/contatos",
+      "text": "Contatos"
+    }
+  ],
+  "mainText": {
+    "content": "Matheus"
+  },
+  "footerText": {
+    "content": "Olá, eu sou o Matheus, eu construo sites"
+    }
+}
