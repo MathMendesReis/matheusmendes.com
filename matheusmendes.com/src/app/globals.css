@@ -4,8 +4,16 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  
+}
+
+* {
+  /* border: 1px solid red; */
+
+  ::-webkit-scrollbar{
+    display: none;
+
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +32,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    font-family: var(--font-inter);
+    
 }
