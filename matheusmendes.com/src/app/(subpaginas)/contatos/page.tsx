@@ -33,7 +33,12 @@ export default function Contatos() {
     <div className='min-h-[80vh] flex items-center gap-16 flex-wrap justify-center'>
       {data.map(({ id, url, icon, description }) => (
         <>
-          <Link href={url} target='_blank' key={id} className="border-solid border-2 border-zinc-400 w-[290.33px] h-[440px] bg-gradient-to-br from-black via-zinc-900 to-black rounded-md cursor-pointer flex flex-col justify-items-start items-center pt-20 pb-[100px] gap-8">
+          <Link 
+          href={url} 
+          target='_blank' 
+          key={id} 
+          title={`ir para ${description}`}
+          className="border-solid border-2 border-zinc-400 w-[290.33px] h-[440px] bg-gradient-to-br from-black via-zinc-900 to-black rounded-md cursor-pointer flex flex-col justify-items-start items-center pt-20 pb-[100px] gap-8">
             <div className='z-20 w-12 h-12 bg-slate-700 flex items-center justify-center rounded-full'>
               {icon}
             </div>
