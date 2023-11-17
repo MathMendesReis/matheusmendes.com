@@ -15,7 +15,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <body className='flex flex-col items-center '>
+    // <body className='flex flex-col items-center justify-center'>
+    <body className='flex flex-col items-center'>
       <header className="h-[4.5rem] flex items-center justify-between w-2/3">
         <Link href={'/'}>
           <ArrowLeft/>
@@ -25,6 +26,7 @@ export default function RootLayout({
           <Link href={'/contatos'} className="w-[60.52px] h-6  text-zinc-400 text-base font-normal font-['Inter'] leading-normal">Contatos</Link>
         </section> 
       </header>
+      {/* <main className='w-[80%] flex flex-col items-center justify-center' >{children}</main> */}
       <main className='w-[80%] flex flex-col items-center justify-center' >{children}</main>
     </body>
   )

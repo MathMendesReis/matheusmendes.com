@@ -2,6 +2,8 @@ import Link from "next/link";
 import data from '@/service/home.json'
 
 
+
+
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
