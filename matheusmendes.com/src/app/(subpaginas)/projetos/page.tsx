@@ -4,7 +4,7 @@ import api from '@/service/api'
 import Data from '@/service/projects.json'
 import { formatDate } from '@/utils/formatDate'
 import CardProject from '@/app/components/card-project'
-import Bar from '@/components/divBar'
+import Bar from '@/app/components/divBar'
 
 async function getFeaturedProducts(): Promise<Projects[]> {
   const response = await api('/users/MathMendesReis/repos', {
@@ -31,7 +31,7 @@ export default async function Projetos() {
         <p className="w-full sm:w-[502.60px] h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{Data.headerTexts.paragraph}</p>
       </header>
       <main className='flex flex-col items-center '>
-      <Bar/>
+        <Bar />
         <section className='flex gap-9 items-start justify-center flex-wrap w-full'>
           <Link href={featured.html_url} className="flex-1 bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4 flex flex-col gap-9">
             <header>
@@ -43,25 +43,26 @@ export default async function Projetos() {
             </main>
             <footer className='mt-auto'>
               <Link href={featured?.html_url}>
-                <p className=" sm:w-[502.60px] w-full min-h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">Leia mais</p>
+                <p className=" sm:flex-1 w-full min-h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">Leia mais</p>
               </Link>
             </footer>
           </Link>
           <section className='grid grid-rows-2 gap-8'>
-            <CardProject
-              id={data[itemOne].id}
-              name={data[itemOne].name}
-              created_at={data[itemOne].created_at}
-              description={data[itemOne].description}
-              html_url={data[itemOne].html_url}
-            />
-            <CardProject
-              id={data[itemTwo].id}
-              name={data[itemTwo].name}
-              created_at={data[itemTwo].created_at}
-              description={data[itemTwo].description}
-              html_url={data[itemTwo].html_url}
-            />
+            {data.map(({id,name,html_url,description,created_at},index) => {
+              if(index === itemOne || index === itemTwo){
+                return (
+                  <Link href={html_url ? html_url : ''} target='_blank' key={id} className="w-full lg:w-[32rem] h-[12rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4 flex flex-col gap-1">
+                    <header>
+                      <time className="w-full h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{formatDate(created_at)}</time>
+                    </header>
+                    <main className='flex flex-col gap-1'>
+                      <h2 className=" w-full h-15 text-zinc-100 text-3xl font-bold font-['Inter'] leading-10">{name}</h2>
+                      <p className="w-full h-12 line-clamp-5 text-zinc-400 text-base font-normal font-['Inter'] leading-normal shrink-0">{description}</p>
+                    </main>
+                  </Link>
+                )
+              }
+            })}
           </section>
         </section>
         <Bar />
