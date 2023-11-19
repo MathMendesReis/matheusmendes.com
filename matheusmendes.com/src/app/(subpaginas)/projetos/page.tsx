@@ -32,8 +32,8 @@ export default async function Projetos() {
       </header>
       <main className='flex flex-col items-center '>
       <Bar/>
-        <section className='flex gap-9 items-start justify-center flex-wrap'>
-          <Link href={featured.html_url} className="w-[24.5rem]  md:w-[55%]  min-h-[25.75rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4 flex flex-col gap-9">
+        <section className='flex gap-9 items-start justify-center flex-wrap w-full'>
+          <Link href={featured.html_url} className="flex-1 bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4 flex flex-col gap-9">
             <header>
               <time className="w-[502.60px] h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{formatDate(featured?.created_at)}</time>
             </header>
@@ -47,7 +47,7 @@ export default async function Projetos() {
               </Link>
             </footer>
           </Link>
-          <section className='flex flex-col items-center gap-7'>
+          <section className='grid grid-rows-2 gap-8'>
             <CardProject
               id={data[itemOne].id}
               name={data[itemOne].name}
