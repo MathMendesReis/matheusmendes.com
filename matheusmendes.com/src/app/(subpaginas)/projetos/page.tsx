@@ -3,9 +3,15 @@ import React from 'react'
 import api from '@/service/api'
 import Data from '@/service/projects.json'
 import { formatDate } from '@/utils/formatDate'
+import CardProject from '@/app/components/card-project'
+import Bar from '@/components/divBar'
 
 async function getFeaturedProducts(): Promise<Projects[]> {
-  const response = await api('/users/MathMendesReis/repos')
+  const response = await api('/users/MathMendesReis/repos', {
+    next: {
+      revalidate: 60 * 60,
+    }
+  })
 
   const projects = await response.json()
 
@@ -13,27 +19,27 @@ async function getFeaturedProducts(): Promise<Projects[]> {
 }
 
 export default async function Projetos() {
-  const [featured ,...data] = await getFeaturedProducts()
+  const [featured, ...data] = await getFeaturedProducts()
   const min = 0;
-  const max = data.length;
+  const max = data.length - 1;
   const itemOne: number = Math.floor(Math.random() * (max - min + 1)) + min;
   const itemTwo: number = Math.floor(Math.random() * (max - min + 1)) + min;
   return (
     <>
-      <header className='flex flex-col w-2/3 mt-14'>
+      <header className='flex flex-col w-full mt-14'>
         <h1 className="w-full h-10 text-zinc-100 text-4xl font-bold font-['Inter'] leading-10">{Data.headerTexts.content}</h1>
         <p className="w-full sm:w-[502.60px] h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{Data.headerTexts.paragraph}</p>
       </header>
-      <div className="w-2/3 h-px bg-zinc-800 mt-20 mb-16" />
       <main className='flex flex-col items-center '>
+      <Bar/>
         <section className='flex gap-9 items-start justify-center flex-wrap'>
-          <Link href={featured.html_url?featured.html_url:''}  className="sm:w-[36.875rem] w-full  min-h-[28.75rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4 flex flex-col gap-9">
+          <Link href={featured.html_url} className="w-[24.5rem]  md:w-[55%]  min-h-[25.75rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4 flex flex-col gap-9">
             <header>
               <time className="w-[502.60px] h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{formatDate(featured?.created_at)}</time>
             </header>
             <main>
-              <h2 className="w-full h-10 text-zinc-100 text-3xl font-bold font-['Inter'] leading-10">{featured?.name}</h2>
-              <p className="sm:w-[502.60px] w-3/4  h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{featured?.description}</p>
+              <h2 className="w-full h-10 text-zinc-100 text-3xl font-bold font-['Inter'] leading-10">{featured.name}</h2>
+              <p className="w-full h-56 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{featured.description}</p>
             </main>
             <footer className='mt-auto'>
               <Link href={featured?.html_url}>
@@ -42,38 +48,33 @@ export default async function Projetos() {
             </footer>
           </Link>
           <section className='flex flex-col items-center gap-7'>
-            <Link href={data[itemOne].html_url} className="w-[392.66px] min-h-[13.5rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4">
-              <header>
-                <time className="w-full h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{formatDate(data[itemOne].created_at)}</time>
-              </header>
-              <main>
-                <h2 className="w-full h-10 text-ellipsis text-zinc-100 text-3xl font-bold font-['Inter'] leading-10">{data[itemOne].name}</h2>
-                <p className="w-full text-ellipsis	 text-zinc-400 text-base font-normal font-['Inter'] leading-normal shrink-0">{data[itemOne].description}</p>
-              </main>
-            </Link>
-            <Link href={data[itemTwo].html_url} className="w-[392.66px] min-h-[13.5rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4">
-              <header>
-                <time className="w-full h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{formatDate(data[itemTwo].created_at)}</time>
-              </header>
-              <main>
-                <h2 className="w-[139.36px] h-10 text-zinc-100 text-3xl font-bold font-['Inter'] leading-10">{data[itemTwo].name}</h2>
-                <p className="w-full  text-zinc-400 text-base font-normal font-['Inter'] leading-normal shrink-0">{data[itemTwo].description}</p>
-              </main>
-            </Link>
+            <CardProject
+              id={data[itemOne].id}
+              name={data[itemOne].name}
+              created_at={data[itemOne].created_at}
+              description={data[itemOne].description}
+              html_url={data[itemOne].html_url}
+            />
+            <CardProject
+              id={data[itemTwo].id}
+              name={data[itemTwo].name}
+              created_at={data[itemTwo].created_at}
+              description={data[itemTwo].description}
+              html_url={data[itemTwo].html_url}
+            />
           </section>
         </section>
-        <div className="w-2/3 h-px bg-zinc-800 mt-20 mb-16" />
-        <section className='ml-auto mr-auto mb-16 flex items-start justify-center  gap-5 flex-wrap'>
-          {data.slice(0, 6).map(({ id, name, created_at, description, html_url }) => (
-            <Link href={html_url?html_url:''} target='_blank' key={id} className="w-[24.5rem] min-h-[12rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4">
-              <header>
-                <time className="w-full h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{formatDate(created_at)}</time>
-              </header>
-              <main>
-                <h2 className=" w-full h-10 text-zinc-100 text-3xl font-bold font-['Inter'] leading-10">{name}</h2>
-                <p className="w-full  text-zinc-400 text-base font-normal font-['Inter'] leading-normal shrink-0">{description}</p>
-              </main>
-            </Link>
+        <Bar />
+        <section className='flex flex-wrap justify-center gap-4 items-center'>
+          {data.map(({ id, name, created_at, description, html_url }) => (
+            <CardProject
+              key={id}
+              id={id}
+              name={name}
+              created_at={created_at}
+              description={description}
+              html_url={html_url}
+            />
           ))}
         </section>
       </main>
