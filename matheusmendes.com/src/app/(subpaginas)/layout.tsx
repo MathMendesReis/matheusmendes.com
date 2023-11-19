@@ -25,7 +25,7 @@ export default function RootLayout({
           <Link href={'/contatos'} className="w-[60.52px] h-6  text-zinc-400 text-base font-normal font-['Inter'] leading-normal">Contatos</Link>
         </section> 
       </header>
-      <main className='2xl:w-[68%] xl:w-[80%] sm:w-[90%] flex flex-col items-center justify-center mb-8 sm:px-0 px-3' >{children}</main>
+      <main className='2xl:w-[68%] xl:w-[80%] sm:w-[90%] w-full flex flex-col items-center justify-center mb-8 sm:px-0 px-3' >{children}</main>
     </body>
   )
 }

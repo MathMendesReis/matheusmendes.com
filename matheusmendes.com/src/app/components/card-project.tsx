@@ -11,7 +11,7 @@ interface Props {
 }
 export default function CardProject({id,created_at,description,html_url,name}:Props) {
   return (
-    <Link href={html_url ? html_url : ''} target='_blank' key={id} className="w-[24.5rem] h-[12rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4 flex flex-col gap-1">
+    <Link href={html_url ? html_url : ''} target='_blank' key={id} className=" sm:w-[23rem] w-full h-[12rem] bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-900 rounded-md p-4 flex flex-col gap-1">
       <header>
         <time className="w-full h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{formatDate(created_at)}</time>
       </header>
