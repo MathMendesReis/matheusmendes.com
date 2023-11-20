@@ -14,8 +14,13 @@ async function getFeaturedProducts(): Promise<Projects[]> {
   })
 
   const projects = await response.json()
+  const filteredProjects = projects.map((project: { name: string }) => {
+    return {
+      ...project,name: project.name.replace("-", " "),
+    }
+  })
 
-  return projects
+  return filteredProjects
 }
 
 export default async function Projetos() {
