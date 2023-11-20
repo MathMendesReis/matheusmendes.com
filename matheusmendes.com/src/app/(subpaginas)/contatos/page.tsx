@@ -31,8 +31,7 @@ const data: Data[] = [
 export default function Contatos() {
   return (
     <>
-      <div className='min-h-[80vh] flex items-center gap-16 flex-wrap justify-center'>
-        <div className='flex items-center justify-center w-full gap-5 flex-wrap'>
+        <div className='flex items-center justify-center w-full gap-5 flex-wrap  min-h-[80vh] py-4'>
           {data.map(({ id, url, icon, description }) => (
             <>
               <Link
@@ -40,8 +39,8 @@ export default function Contatos() {
                 target='_blank'
                 key={id}
                 title={`ir para ${description}`}
-                className="sm:w-[25.125rem] w-72 h-[30.5rem] bg-gradient-to-br from-black via-zinc-900 to-black rounded-md cursor-pointer flex flex-col justify-items-start items-center pt-20 pb-[100px] gap-8">
-                <div className='z-20 w-12 h-12 bg-slate-700 flex items-center justify-center rounded-full'>
+                className="sm:w-[25.125rem] w-72 sm:h-[30.5rem]  bg-gradient-to-br from-black via-zinc-900 to-black rounded-md cursor-pointer flex flex-col justify-items-start items-center pt-20 pb-[100px] gap-8">
+                <div className='z-20 w-12 h-12 bg-slate-700 flex items-center justify-center rounded-full p-3'>
                   {icon}
                 </div>
                 <span className='absolute w-px h-1/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent' />
@@ -51,7 +50,6 @@ export default function Contatos() {
             </>
           ))}
         </div>
-      </div>
     </>
   )
 }
