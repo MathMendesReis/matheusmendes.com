@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <body className='flex flex-col items-center'>
-      <header className="h-[4.5rem] flex items-center justify-between w-full sm:px-0 px-5 fixed backdrop-filter backdrop-grayscale backdrop-blur-md backdrop-contrast-200">
+      <header className="z-30 h-[4.5rem] flex items-center justify-between w-full sm:px-0 px-5 fixed backdrop-filter backdrop-grayscale backdrop-blur-md backdrop-contrast-200">
         <Link href={'/'} className='sm:ml-auto sm:mr-[60%]'>
           <ArrowLeft/>
         </Link>

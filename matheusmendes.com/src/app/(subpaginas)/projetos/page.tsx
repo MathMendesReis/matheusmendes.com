@@ -14,8 +14,13 @@ async function getFeaturedProducts(): Promise<Projects[]> {
   })
 
   const projects = await response.json()
+  const filteredProjects = projects.map((project: { name: string }) => {
+    return {
+      ...project,name: project.name.replace("-", " "),
+    }
+  })
 
-  return projects
+  return filteredProjects
 }
 
 export default async function Projetos() {
@@ -76,7 +81,7 @@ export default async function Projetos() {
         <Bar />
         <section className='flex flex-wrap justify-center gap-8 items-center'>
           {data.map(({ id, name, html_url, description, created_at }, index) => {
-            if (index != itemOne || index != itemTwo) {
+            if (index != itemOne && index != itemTwo && name != featured ) {
               return (
                 <CardProject
                   key={id}
