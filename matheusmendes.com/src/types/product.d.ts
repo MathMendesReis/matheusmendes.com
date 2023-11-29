@@ -3,5 +3,6 @@ interface Projects {
   name: string
   created_at: string
   description: string
-  html_url: string
+  html_url: string,
+  homepage:string
 }
