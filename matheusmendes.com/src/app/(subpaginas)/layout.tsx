@@ -24,9 +24,9 @@ export default function RootLayout({
           <ArrowLeft />
         </Link>
         <section className=" h-6  sm:flex gap-5 hidden">
-          {others.map(({href,text}) => {
+          {others.map(({href,text},index) => {
             return (
-              <Link href={href} className="min-w-[5.8125rem] h-6  ">
+              <Link key={index} href={href} className="min-w-[5.8125rem] h-6  ">
                 <p className="text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{text}</p>
               </Link>
             )

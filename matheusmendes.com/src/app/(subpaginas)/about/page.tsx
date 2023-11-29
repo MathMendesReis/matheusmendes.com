@@ -9,11 +9,11 @@ export default function About() {
           {data.texts.slice(0, 2).map(({ content, type }, index) => {
             if (type === 'title') {
               return (
-                <h1 className="text-white font-medium text-xl mb-8 tracking-tighter">{content}</h1>
+                <h1 key={index} className="text-white font-medium text-xl mb-8 tracking-tighter">{content}</h1>
               )
             } else {
               return (
-                <p className='text-white/75 leading-relaxed text-lg'>{content}</p>
+                <p key={index} className='text-white/75 leading-relaxed text-lg'>{content}</p>
               )
             }
           })}

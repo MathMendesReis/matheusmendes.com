@@ -1,4 +1,3 @@
-import { formatDate } from '@/utils/formatDate'
 import Link from 'next/link'
 import React, { ElementType } from 'react'
 

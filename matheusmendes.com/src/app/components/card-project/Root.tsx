@@ -1,4 +1,3 @@
-import { formatDate } from '@/utils/formatDate'
 import React from 'react'
 
 type Width = 'lg:w-[32rem]'|'sm:w-[18rem]'|'flex-1'|'lg:[22rem]'|''

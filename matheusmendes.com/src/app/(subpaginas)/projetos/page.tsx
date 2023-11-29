@@ -1,10 +1,8 @@
-import Link from 'next/link'
 import React, { Suspense } from 'react'
 import api from '@/service/api'
 import Data from '@/service/projects.json'
-import { formatDate } from '@/utils/formatDate'
 import Bar from '@/app/components/divBar'
-import { ExternalLinkIcon, Github } from 'lucide-react'
+import { ExternalLinkIcon, Github, GithubIcon } from 'lucide-react'
 import { CardProject } from '@/app/components/card-project/index'
 
 async function getFeaturedProducts(): Promise<Projects[]> {
@@ -39,7 +37,7 @@ export default async function Projetos() {
       </header>
       <main className='flex flex-col items-center '>
         <Bar />
-        <Suspense fallback={<div className=' animate-pulse space-x-4 flex'/>}>
+        <Suspense fallback={<div className=' animate-pulse space-x-4 flex' />}>
 
           <section className='flex gap-9 items-start justify-center flex-wrap w-full min-h-[55vh]'>
             {data.map(({ id, name, html_url, description, created_at, homepage }) => {
@@ -50,8 +48,14 @@ export default async function Projetos() {
                     <CardProject.Name name={name} />
                     <CardProject.Desc description={description} />
                     <footer className='flex items-center justify-end gap-3 mt-auto' >
-                      <CardProject.LinkWithIcon url={html_url} children={Github} />
-                      {homepage && <CardProject.LinkWithIcon url={homepage} children={ExternalLinkIcon} />}
+                      <CardProject.LinkWithIcon url={html_url}>
+                        {GithubIcon}
+                      </CardProject.LinkWithIcon>
+                      {homepage &&
+                        <CardProject.LinkWithIcon url={homepage}>
+                          {ExternalLinkIcon}
+                        </CardProject.LinkWithIcon>
+                      }
                     </footer>
                   </CardProject.Root>
                 )
@@ -67,8 +71,14 @@ export default async function Projetos() {
                       <CardProject.Name name={name} />
                       <CardProject.Desc description={description} />
                       <footer className='flex items-center justify-end gap-3 mt-auto' >
-                        <CardProject.LinkWithIcon url={html_url} children={Github} />
-                        {homepage && <CardProject.LinkWithIcon url={homepage} children={ExternalLinkIcon} />}
+                        <CardProject.LinkWithIcon url={html_url}>
+                          {Github}
+                        </CardProject.LinkWithIcon>
+                        {homepage &&
+                          <CardProject.LinkWithIcon url={homepage}>
+                            {ExternalLinkIcon}
+                          </CardProject.LinkWithIcon>
+                        }
                       </footer>
                     </CardProject.Root>
                   )
@@ -88,8 +98,14 @@ export default async function Projetos() {
                   <CardProject.Name name={name} />
                   <CardProject.Desc description={description} />
                   <footer className='flex items-center justify-end gap-3 mt-auto' >
-                    <CardProject.LinkWithIcon url={html_url} children={Github} />
-                    {homepage && <CardProject.LinkWithIcon url={homepage} children={ExternalLinkIcon} />}
+                    <CardProject.LinkWithIcon url={html_url}>
+                      {Github}
+                    </CardProject.LinkWithIcon>
+                    {homepage &&
+                      <CardProject.LinkWithIcon url={homepage}>
+                        {ExternalLinkIcon}
+                      </CardProject.LinkWithIcon>
+                    }
                   </footer>
                 </CardProject.Root>
               )
