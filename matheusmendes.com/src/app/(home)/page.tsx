@@ -9,12 +9,18 @@ export default function Home() {
         quantity={100}
       />
       <div className="flex flex-col justify-center items-center min-h-screen ">
-        <div className="flex flex-col justify-center items-center  animate-wiggle">
-          <nav className="w-[8.625rem] h-[5.25rem]  pt-3">
-            <ul className="flex gap-4 justify-center animate-fade-in">
-              {data.links.map((item, i) => (
-                <Link key={i} href={item.href} className=" w-[4.8125rem] h-[1.0625rem] text-zinc-500 text-lg font-normal font-['Inter'] leading-tight" title={`ir para ${item.text}`}>{item.text}</Link>
-              ))}
+        <div className="flex flex-col justify-center items-center ">
+          <nav className="w-full sm:w-[20.625rem] h-[5.25rem]  pt-3 ">
+            <ul className="w-full flex gap-4 justify-center animate-fade-in  ">
+              {data.links.map((item, i) => {
+                if (item.href !== '/') {
+                  return (
+                    <Link key={i} href={item.href} className=" min-w-[5.8125rem] min-h-[1.0625rem]" title={`ir para ${item.text}`}>
+                      <p className=" text-zinc-500 sm:text-lg font-normal font-['Inter'] leading-tight">{item.text}</p>
+                    </Link>
+                  )
+                }
+              })}
             </ul>
           </nav>
           <main className="">
@@ -22,7 +28,7 @@ export default function Home() {
               {data.mainText.content}
             </h1>
           </main>
-          <footer className="h-[5.25rem] flex sm:items-center justify-center animate-fade-in">
+          <footer className="h-[5.25rem] flex sm:items-center justify-center animate-fade-in mt-8">
             <p className="w-full  h-[1.0625rem] text-center text-zinc-500 sm:text-lg font-normal font-['Inter'] leading-tight">{data.footerText.content}</p>
           </footer>
         </div>
