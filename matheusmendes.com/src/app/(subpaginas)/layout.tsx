@@ -2,13 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ArrowLeft from '../components/arrow-left'
 import data from '@/service/home.json'
+import meta from '@/service/metadata.json'
 
 
 
 
 export const metadata: Metadata = {
-  title: 'Matheus Mendes',
-  description: '',
+  title: `${meta.metadata.title}`,
+  description: `${meta.metadata.metadata}`,
 }
 
 export default function RootLayout({
