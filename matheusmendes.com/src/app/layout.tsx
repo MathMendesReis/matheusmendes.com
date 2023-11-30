@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import data from '@/service/metadata.json'
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -9,8 +10,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Matheus Mendes',
-  description: '',
+  title: `${data.metadata.title}`,
+  description: `${data.metadata.metadata}`,
 }
 
 export default function RootLayout({
