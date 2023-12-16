@@ -15,7 +15,7 @@ export default function Home() {
               {data.links.map((item, i) => {
                 if (item.href !== '/') {
                   return (
-                    <Link key={i} href={item.href} className=" min-w-[5.8125rem] min-h-[1.0625rem]" title={`ir para ${item.text}`}>
+                    <Link key={i} href={item.href} className=" min-w-[5.8125rem] min-h-[1.0625rem]"       title={`ir para ${item.text}`}>
                       <p className=" text-zinc-500 sm:text-lg font-normal font-['Inter'] leading-tight">{item.text}</p>
                     </Link>
                   )
@@ -24,7 +24,7 @@ export default function Home() {
             </ul>
           </nav>
           <main className="">
-            <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+            <h1 className="z-10 text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display text-8xl whitespace-nowrap bg-clip-text sm:text-9xl ">
               {data.mainText.content}
             </h1>
           </main>
