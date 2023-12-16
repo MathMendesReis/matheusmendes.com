@@ -7,9 +7,6 @@ import { CardProject } from '@/app/components/card-project/index'
 
 async function getFeaturedProducts(): Promise<Projects[]> {
   const response = await api('/users/MathMendesReis/repos', {
-    next: {
-      revalidate: 60 * 60,
-    }
   })
 
   const projects = await response.json()
