@@ -42,7 +42,7 @@ export default async function Projetos() {
                       <CardProject.Name name={name} />
                       <CardProject.Desc description={description} />
                   </section>
-                    {/* <section className='flex items-center justify-start gap-3 w-' >
+                    <section className='flex items-center justify-start gap-3 w-[500px] flex-wrap ' >
                       {
                         language &&
                       <div className='border-2 border-indigo-500 w-36 px-8 py-2 rounded-full flex items-center justify-center'>
@@ -54,7 +54,7 @@ export default async function Projetos() {
                            <p key={id} >{topic}</p>
                         </div>
                       ))}
-                    </section> */}
+                    </section>
                  </main>
                   <footer className='flex items-center justify-end gap-3 mt-auto' >
                     <CardProject.LinkWithIcon url={html_url}>
