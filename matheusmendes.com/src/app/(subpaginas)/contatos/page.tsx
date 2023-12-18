@@ -7,7 +7,7 @@ import { contatos } from './contatos'
 export default function Contatos() {
   return (
     <>
-        <div className='flex items-center justify-center w-full gap-5 flex-wrap  min-h-[80vh] py-4 sm:px-0 px-8'>
+        <div className='flex items-center justify-center animate-title w-full gap-5 flex-wrap  min-h-[80vh] py-4 sm:px-0 px-8'>
           {contatos.map(({ id, url, icon, description }) => (
             <>
               <Link

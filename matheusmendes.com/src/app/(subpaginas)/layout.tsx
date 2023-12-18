@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   const [home, ...others] = data.links
   return (
-    <div className='flex flex-col items-center '>
+    <div className='flex flex-col items-center animate-title'>
       <header className=" z-30 h-[4.5rem] w-full sm:w-[1024px] fixed backdrop-filter backdrop-grayscale backdrop-blur-md backdrop-contrast-100 flex items-center justify-between sm:p-0 px-8">
         <Link href={home.href} className=''>
           <ArrowLeft />
