@@ -10,6 +10,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        sans: ['var(--font-inter)'],
+        mono: ['var(--font-kalam)'],
+      },
       keyframes: {
         wiggle: {
           '0%': {
@@ -59,9 +63,6 @@ const config: Config = {
         wiggle: 'wiggle 2s ease 0s 1 normal forwards',
         title: "title 3s ease-out forwards",
         "fade-in": "fade-in 3s ease-in-out forwards",
-
-
-
       }
     },
   },

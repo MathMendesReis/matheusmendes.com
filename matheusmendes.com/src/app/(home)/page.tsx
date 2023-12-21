@@ -15,8 +15,9 @@ export default function Home() {
               {data.links.map((item, i) => {
                 if (item.href !== '/') {
                   return (
-                    <Link key={i} href={item.href} className=" sm:min-w-[5.8125rem] min-h-[1.0625rem]"       title={`ir para ${item.text}`}>
-                      <p className=" text-zinc-500 sm:text-lg font-normal font-['Inter'] leading-tight">{item.text}</p>
+                    <Link key={i} href={item.href} className=" sm:min-w-[5.8125rem] min-h-[1.0625rem] hover:underline transition-all"       
+                    title={`ir para ${item.text}`}>
+                      <p className="font-mono text-zinc-500 sm:text-lg font-normal font-['Inter'] leading-tight">{item.text}</p>
                     </Link>
                   )
                 }
@@ -24,13 +25,13 @@ export default function Home() {
             </ul>
           </nav>
           <main className="flex flex-col">
-            <h1 className="z-10 text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display text-6xl whitespace-nowrap bg-clip-text sm:text-9xl ">
+            <h1 className="z-10 text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display text-6xl whitespace-nowrap bg-clip-text sm:text-9xl font-mono">
               {data.mainText.content}
             </h1>
              
           </main>
           <footer className="h-[5.25rem] flex sm:items-center justify-center animate-fade-in mt-8 flex-col">
-            <p className="w-full  min-h-[1.0625rem] text-center text-zinc-500 sm:text-lg font-normal font-['Inter'] leading-tight">{data.footerText.content}</p>
+            <p className="w-full  min-h-[1.0625rem] text-center text-zinc-500 sm:text-lg font-normal font-mono leading-tight">{data.footerText.content}</p>
            
           </footer>
         </div>

@@ -25,7 +25,7 @@ export default async function Projetos() {
   return (
     <>
       <header className='flex flex-col w-full lg:w-[956px] mt-14 animate-title '>
-        <h1 className="w-full h-10 text-zinc-100 sm:text-4xl text-2xl font-bold font-['Inter'] leading-10 animate-title">{Data.headerTexts.content}</h1>
+        <h1 className="w-full h-10 text-zinc-100 sm:text-4xl text-2xl font-bold font-mono leading-10 animate-title">{Data.headerTexts.content}</h1>
         <p className="w-full sm:w-[31.375rem] h-6 text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{Data.headerTexts.paragraph}</p>
       </header>
       <main className='flex flex-col items-center'>

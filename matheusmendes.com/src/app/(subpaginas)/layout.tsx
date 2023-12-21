@@ -28,7 +28,7 @@ export default function RootLayout({
           {others.map(({href,text},index) => {
             return (
               <Link key={index} href={href} className="lg:min-w-[5.8125rem] h-6  ">
-                <p className="text-zinc-400 text-base font-normal font-['Inter'] leading-normal">{text}</p>
+                <p className="text-zinc-400 text-base font-normal  leading-normal font-mono">{text}</p>
               </Link>
             )
           })}
