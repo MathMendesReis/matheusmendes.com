@@ -33,3 +33,18 @@ body {
 color: white;    
 
 }
+
+@layer utilities {
+  .bgTextColor {
+    background: var(--brand-gradient-horizontal, linear-gradient(90deg, #9955E8 10%, #7BFFAF 50%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+div,section{
+  width: 1440px;
+  @media (max-wdith:1440px) {
+    width: 100%;
+  }
+}
