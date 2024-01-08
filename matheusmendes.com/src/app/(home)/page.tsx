@@ -1,15 +1,17 @@
 import CustomMainBox from '@/components/page/CustomMainBox'
 import AboutComponent from '@/feature/about'
-import Header from '@/feature/header'
+import HomeComponent from '@/feature/home'
 import React from 'react'
 
 export default function Page() {
   return (
-    <main>
-      <Header />
+    <>
+      <CustomMainBox>
+        <HomeComponent />
+      </CustomMainBox>
       <CustomMainBox>
         <AboutComponent />
       </CustomMainBox>
-    </main>
+    </>
   )
 }
