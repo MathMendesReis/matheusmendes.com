@@ -2,8 +2,6 @@ import { z } from 'zod'
 
 const envSchema = z.object({
   NEXT_PUBLIC_BASE_URL_GITHUB: z.string().url(),
-  NOTION_KEY: z.string(),
-  NOTION_DATABASE_ID: z.string(),
 })
 
 const parsEnv = envSchema.safeParse(process.env)
