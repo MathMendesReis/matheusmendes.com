@@ -37,7 +37,7 @@ function Card() {
 
 function BackgroundBox({ children }: { children: React.ReactNode }) {
   return (
-    <section className="bg-zinc-900 w-full flex px-10 rounded-lg py-6 items-start justify-between flex-wrap sm:h-auto h-screen">
+    <section className="bg-zinc-900 w-full flex px-10 rounded-lg py-6 items-start justify-between flex-wrap sm:h-auto h-screen reval">
       {children}
     </section>
   )
