@@ -7,7 +7,7 @@ import React from 'react'
 
 export default function Page() {
   return (
-    <main>
+    <main className="flex flex-col items-start gap-5 justify-center">
       <CustomMainBox>
         <HomeComponent />
       </CustomMainBox>

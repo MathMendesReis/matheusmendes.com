@@ -7,8 +7,11 @@ import React from 'react'
 export default function HomeComponent() {
   return (
     <Box>
-      <div id="#home" className="flex flex-wrap items-center justify-between">
-        <section className="max-h-[609px] mx-auto w-full sm:w-[592px] flex items-start  flex-col sm:justify-center justify-start">
+      <div
+        id="#home"
+        className="flex flex-wrap items-center justify-between w-full"
+      >
+        <section className="max-h-[609px] mx-auto w-full sm:w-[592px] flex items-center sm:items-start  flex-col sm:justify-center justify-start">
           <TypingAnimation text="Maatheus Mendes" speed={280} />
           <div className="w-full ">
             <Text size="2xl" as="p" className="animate-fade-in">
