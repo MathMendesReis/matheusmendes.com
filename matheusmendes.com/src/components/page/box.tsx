@@ -2,10 +2,14 @@ import React from 'react'
 
 interface CustomBox {
   children: React.ReactNode
+  id?: string
 }
-export default function Box({ children }: CustomBox) {
+export default function Box({ children, id }: CustomBox) {
   return (
-    <section className="w-full flex items-center justify-between h-[600px] sm:flex-nowrap flex-wrap">
+    <section
+      id={id}
+      className="w-full flex items-center justify-between min-h-screen sm:flex-nowrap flex-wrap"
+    >
       {children}
     </section>
   )
