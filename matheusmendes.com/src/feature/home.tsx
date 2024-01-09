@@ -6,31 +6,40 @@ import React from 'react'
 
 export default function HomeComponent() {
   return (
-    <div id="#home">
-      <Box>
-        <section className="h-[609px] w-[592px] flex items-start  flex-col justify-center">
+    <Box>
+      <div id="#home" className="flex flex-wrap items-center justify-between">
+        <section className="max-h-[609px] mx-auto w-full sm:w-[592px] flex items-start  flex-col sm:justify-center justify-start">
           <TypingAnimation text="Maatheus Mendes" speed={280} />
-          <div className="w-full opacity-0 animate-title">
-            <Text size="2xl" as="p">
-              Full-stack developer and innovation enthusiast
+          <div className="w-full ">
+            <Text size="2xl" as="p" className="animate-fade-in">
+              Desenvolvedor Full stack
             </Text>
-            <Text size="lg" as="p" className="" color="text-neutral-300">
-              Over 4 years of experience in the tech industry. I specialize in
-              building innovative web and mobile applications using technologies
-              such as React, React Native, and Node.js.
+            <Text
+              size="lg"
+              as="p"
+              className="animate-fade-in"
+              color="text-neutral-300"
+            >
+              Com menos de um ano de experiência na indústria de tecnologia, sou
+              um desenvolvedor júnior especializado em tecnologias como React,
+              Next.js, Tailwind, Styled Components, Spring e Node.js. Graduado
+              em Análise e Desenvolvimento de Sistemas, estou ansioso para
+              contribuir para projetos desafiadores, continuando a aprender e
+              crescer profissionalmente.
             </Text>
           </div>
         </section>
-        <figure className="h-[609px] w-[592px] flex items-center justify-center">
+        <figure className="h-[609px] w-[592px] flex items-center justify-center mx-auto">
           <Image
             alt=""
             src="./programer.svg"
             width={488}
             height={417}
             quality={100}
+            className="animate-fade-in"
           />
         </figure>
-      </Box>
-    </div>
+      </div>
+    </Box>
   )
 }

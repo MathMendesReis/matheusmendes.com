@@ -5,6 +5,7 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -57,7 +58,7 @@ const config: Config = {
       animation: {
         wiggle: 'wiggle 2s ease 0s 1 normal forwards',
         title: 'title 3s ease-out forwards',
-        'fade-in': 'fade-in 3s ease-in-out forwards',
+        'fade-in': 'fade-in 6s ease-in-out forwards',
       },
       boxShadow: {
         '3xl': '0 8px 16px 0px rgba(0, 0, 0, 0.3)',

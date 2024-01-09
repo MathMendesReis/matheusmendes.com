@@ -6,10 +6,10 @@ interface TypingAnimationProps {
   speed: number
 }
 export default function TypingAnimation({ text, speed }: TypingAnimationProps) {
-  const [displayText, setDisplayText] = useState<string>(`${text[0]}`)
+  const [displayText, setDisplayText] = useState<string>('')
 
   useEffect(() => {
-    let index = 1
+    let index = 0
     const timer = setInterval(() => {
       if (index < text.length) {
         setDisplayText((prevText) => prevText + text.charAt(index))
@@ -23,7 +23,7 @@ export default function TypingAnimation({ text, speed }: TypingAnimationProps) {
   }, [text, speed])
 
   return (
-    <Text size="6xl" className="bgTextColor animate-fade-in">
+    <Text size="6xl" className="bgTextColor ">
       {displayText}
     </Text>
   )
