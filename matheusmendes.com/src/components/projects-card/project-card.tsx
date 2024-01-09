@@ -4,22 +4,15 @@ import React from 'react'
 import Text from '../typography/components/text'
 import { formatarData } from '@/utils/formatDate'
 interface ProjectsCard {
-  id: string
   name: string
-  created_at: string
+  createdAt: string
   description: string
-  html_url: string
-  homepage: string
 }
 
 export default function ProjectCard({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  id,
-  created_at,
+  createdAt,
   description,
   name,
-  html_url,
-  homepage,
 }: ProjectsCard) {
   return (
     <article className="flex flex-col items-start gap-6 flex-1 self-stretch w-[336px]  bg-zinc-900 p-6 reval">
@@ -28,7 +21,7 @@ export default function ProjectCard({
       </figure>
       <div className="w-full">
         <header className="w-full  h-6 justify-between items-start inline-flex">
-          <Text size="xxs">{formatarData(created_at)}</Text>
+          <Text size="xxs">{formatarData(createdAt)}</Text>
           <Image src="./programer.svg" alt="" width={24} height={24} />
         </header>
         <main className="w-[336px] h-16 justify-between items-start inline-flex flex-col">
