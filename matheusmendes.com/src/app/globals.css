@@ -91,7 +91,7 @@ body {
 }
 div,section{
   width: 1440px;
-  @media (max-wdith:1440px) {
+  @media (max-width: 1440px) {
     width: 100%;
   }
 }

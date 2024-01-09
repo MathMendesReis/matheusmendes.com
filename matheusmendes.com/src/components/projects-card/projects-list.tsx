@@ -5,13 +5,9 @@ import { getProductsFecth } from '@/service/getProductsFecth'
 export default async function ProjectsList() {
   const data = await getProductsFecth()
 
-  const listItems = data.map(({ id, createdAt, description, name }) => (
+  const listItems = data.map(({ id, ...rest }) => (
     <li key={id}>
-      <ProjectCard
-        createdAt={createdAt}
-        description={description}
-        name={name}
-      />
+      <ProjectCard id={id} {...rest} />
     </li>
   ))
   return (
