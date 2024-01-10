@@ -23,8 +23,7 @@ export default function HomeComponent() {
               className="animate-fade-in"
               color="text-neutral-300"
             >
-              Com menos de um ano de experiência na indústria de tecnologia, sou
-              um desenvolvedor júnior especializado em tecnologias como React,
+              Desenvolvedor full stack especializado em tecnologias como React,
               Next.js, Tailwind, Styled Components, Spring e Node.js. Graduado
               em Análise e Desenvolvimento de Sistemas, estou ansioso para
               contribuir para projetos desafiadores, continuando a aprender e
