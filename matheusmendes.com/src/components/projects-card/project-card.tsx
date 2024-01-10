@@ -5,14 +5,14 @@ import { formatarData } from '@/utils/formatDate'
 import { Github, Globe } from 'lucide-react'
 import Link from 'next/link'
 interface ProjectsCard {
-  id: string
+  id?: string
   name: string
   createdAt: string
   description: string
   html_url: string
   homepage: string
-  language: string
-  topics: string[]
+  language?: string
+  topics?: string[]
 }
 
 export default function ProjectCard({
@@ -21,9 +21,6 @@ export default function ProjectCard({
   name,
   homepage,
   html_url,
-  id,
-  language,
-  topics,
 }: ProjectsCard) {
   return (
     <article className="flex flex-col items-start gap-6 flex-1 self-stretch w-[336px]  bg-zinc-900 p-6 reval">
