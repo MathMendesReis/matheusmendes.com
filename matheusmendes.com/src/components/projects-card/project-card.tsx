@@ -1,17 +1,17 @@
 /* eslint-disable camelcase */
-import React from "react";
-import Text from "../typography/components/text";
-import { formatarData } from "@/utils/formatDate";
-import Link from "next/link";
+import React from 'react'
+import Text from '../typography/components/text'
+import { formatarData } from '@/utils/formatDate'
+import Link from 'next/link'
 interface ProjectsCard {
-  id?: string;
-  name: string;
-  createdAt: string;
-  description: string;
-  html_url: string;
-  homepage: string;
-  language?: string;
-  topics?: string[];
+  id?: string
+  name: string
+  createdAt: string
+  description: string
+  html_url: string
+  homepage: string
+  language?: string
+  topics?: string[]
 }
 
 export default function ProjectCard({
@@ -40,5 +40,5 @@ export default function ProjectCard({
         </div>
       </article>
     </Link>
-  );
+  )
 }

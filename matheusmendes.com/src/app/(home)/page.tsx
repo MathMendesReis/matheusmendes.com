@@ -1,9 +1,9 @@
-import CustomMainBox from "@/components/page/CustomMainBox";
-import AboutComponent from "@/feature/about";
-import Contatc from "@/feature/contact";
-import HomeComponent from "@/feature/home";
-import Projects from "@/feature/projects";
-import React from "react";
+import CustomMainBox from '@/components/page/CustomMainBox'
+import AboutComponent from '@/feature/about'
+import Contatc from '@/feature/contact'
+import HomeComponent from '@/feature/home'
+import Projects from '@/feature/projects'
+import React from 'react'
 
 export default function Page() {
   return (
@@ -21,5 +21,5 @@ export default function Page() {
         <Contatc />
       </CustomMainBox>
     </main>
-  );
+  )
 }

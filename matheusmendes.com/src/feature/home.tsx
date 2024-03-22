@@ -1,8 +1,8 @@
-import Box from "@/components/page/box";
-import Text from "@/components/typography/components/text";
-import TypingAnimation from "@/hooks/TypingAnimation";
-import Image from "next/image";
-import React from "react";
+import Box from '@/components/page/box'
+import Text from '@/components/typography/components/text'
+import TypingAnimation from '@/hooks/TypingAnimation'
+import Image from 'next/image'
+import React from 'react'
 
 export default function HomeComponent() {
   return (
@@ -43,5 +43,5 @@ export default function HomeComponent() {
         </figure>
       </div>
     </Box>
-  );
+  )
 }

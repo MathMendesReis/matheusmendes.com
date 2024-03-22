@@ -1,7 +1,7 @@
-import Text from "@/components/typography/components/text";
-import { Github, Instagram, Linkedin } from "lucide-react";
-import Link from "next/link";
-import React from "react";
+import Text from '@/components/typography/components/text'
+import { Github, Instagram, Linkedin } from 'lucide-react'
+import Link from 'next/link'
+import React from 'react'
 
 export default function Contatc() {
   return (
@@ -13,7 +13,7 @@ export default function Contatc() {
       </section>
       <Form />
     </BackgroundBox>
-  );
+  )
 }
 
 function Card() {
@@ -32,7 +32,7 @@ function Card() {
         </Text>
       </div>
     </section>
-  );
+  )
 }
 
 function BackgroundBox({ children }: { children: React.ReactNode }) {
@@ -40,12 +40,12 @@ function BackgroundBox({ children }: { children: React.ReactNode }) {
     <section className="bg-zinc-900 w-full flex px-10 rounded-lg py-6 items-start justify-between flex-wrap sm:h-auto h-screen reval">
       {children}
     </section>
-  );
+  )
 }
 function Form() {
   return (
     <section className="flex flex-col items-start justify-center w-full sm:w-[488px] sm:h-[376px]"></section>
-  );
+  )
 }
 
 function SocialMedia() {
@@ -73,5 +73,5 @@ function SocialMedia() {
         </Link>
       </li>
     </ul>
-  );
+  )
 }
