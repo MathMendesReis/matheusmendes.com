@@ -1,7 +1,8 @@
-import Box from '@/components/page/box'
-import Text from '@/components/typography/components/text'
-import Image from 'next/image'
-import React from 'react'
+import Box from "@/components/page/box";
+import Text from "@/components/typography/components/text";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 export default function AboutComponent() {
   return (
@@ -21,8 +22,16 @@ export default function AboutComponent() {
             About me
           </Text>
           <Text size="4xl" as="p" className="apear sm:text-4xl text-lg">
-            Sou um desenvolvedor de software apaixonado em busca de minha
-            primeira oportunidade profissional.
+            Sou um desenvolvedor de software que atualmente atua como
+            desenvolvedor frontend na{" "}
+            <Link
+              className="underline"
+              href="https://www.linkedin.com/company/soujunior-labs/"
+              target="_blank"
+            >
+              soujunior-labs
+            </Link>
+            .
           </Text>
           <Text size="lg" as="p" className="apear" color="text-neutral-300">
             Além da programação, sou um entusiasta do café, um amante de
@@ -33,5 +42,5 @@ export default function AboutComponent() {
         </section>
       </div>
     </Box>
-  )
+  );
 }

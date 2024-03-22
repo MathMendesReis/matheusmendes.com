@@ -4,33 +4,29 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  
 }
-
 
 html {
   font-family: var(--font-inter);
   scroll-behavior: smooth;
-
 }
 body {
-  color: white;    
+  color: white;
 }
 
 * {
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     display: none;
   }
   /* border: 1px solid white; */
 }
-
 
 @keyframes appear {
   from {
     opacity: 0;
     translate: 100vw 0;
   }
-  
+
   to {
     opacity: 1;
     translate: 0 0;
@@ -41,7 +37,7 @@ body {
     opacity: 0;
     translate: -100vw 0;
   }
-  
+
   to {
     opacity: 1;
     translate: 0 0;
@@ -60,36 +56,34 @@ body {
   }
 }
 
-
-
-
-
-
 @layer utilities {
   .bgTextColor {
-    background: var(--brand-gradient-horizontal, linear-gradient(90deg, #9955E8 10%, #7BFFAF 50%));
+    background: var(
+      --brand-gradient-horizontal,
+      linear-gradient(90deg, #9955e8 10%, #7bffaf 50%)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .apear{
+  .apear {
     animation: appear 1ms ease-in-out;
     animation-timeline: view();
     animation-range: cover 0% cover 40%;
   }
-  .apearReverse{
+  .apearReverse {
     animation: appearReverse 1ms ease-in-out;
     animation-timeline: view();
     animation-range: cover 0% cover 40%;
   }
-  .reval{
+  .reval {
     animation: reveal 1ms ease-in-out both;
     animation-timeline: view();
     animation-range: entry 25% cover 50%;
   }
-  
 }
-div,section{
+div,
+section {
   width: 1440px;
   @media (max-width: 1440px) {
     width: 100%;

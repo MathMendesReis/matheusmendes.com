@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 interface CustomBox {
-  children: React.ReactNode
-  id?: string
+  children: React.ReactNode;
+  id?: string;
 }
 export default function Box({ children, id }: CustomBox) {
   return (
@@ -12,5 +12,5 @@ export default function Box({ children, id }: CustomBox) {
     >
       {children}
     </section>
-  )
+  );
 }

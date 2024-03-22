@@ -1,6 +1,6 @@
-'use client'
-import React from 'react'
-import LinkNavHeader from '../Link-nav/LinkNavHeader'
+"use client";
+import React from "react";
+import LinkNavHeader from "../Link-nav/LinkNavHeader";
 
 export default function Modal() {
   return (
@@ -11,5 +11,5 @@ export default function Modal() {
     >
       <LinkNavHeader />
     </div>
-  )
+  );
 }

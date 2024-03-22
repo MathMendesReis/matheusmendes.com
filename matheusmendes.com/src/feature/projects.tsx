@@ -1,7 +1,7 @@
-import Box from '@/components/page/box'
-import ProjectsList from '@/components/projects-card/projects-list'
-import Text from '@/components/typography/components/text'
-import React from 'react'
+import Box from "@/components/page/box";
+import ProjectsList from "@/components/projects-card/projects-list";
+import Text from "@/components/typography/components/text";
+import React from "react";
 
 export default function Projects() {
   return (
@@ -18,5 +18,5 @@ export default function Projects() {
         <main className="w-full">{<ProjectsList />}</main>
       </section>
     </Box>
-  )
+  );
 }

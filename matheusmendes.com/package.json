@@ -8,8 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "eslint --fix"
-
-
   },
   "dependencies": {
     "-": "^0.0.1",
